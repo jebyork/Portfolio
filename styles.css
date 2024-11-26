@@ -82,6 +82,7 @@ header {
     nav {
         display: flex;
         align-items: center;
+        padding: 10px;
 
         ul {
             display: flex;
@@ -228,6 +229,13 @@ section {
     &.small {
         width:250px;
         height:200px;
+    }
+
+    .card-icon {
+        width: 80%;
+        height: auto;
+        margin-bottom: 20px;
+        object-fit: contain;
     }
 }
 
