@@ -139,7 +139,7 @@ header {
                 }
             }
         }
-        
+
     }
 }
 
@@ -203,46 +203,49 @@ section {
     }
 }
 
-.scrolling-programs {
-    overflow-x: scroll;
+.scrolling-projects {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
     overflow-y: hidden;
-    white-space: nowrap;
-    overscroll-behavior: contain;
-    scrollbar-width: none;
-
-    &.snap {
-        scroll-snap-type: inline mandatory;
-        scroll-padding-inline: 30px;
-    }
+    scroll-snap-type: x mandatory;
+    scroll-padding: 10px;
 }
 
-.scrolling-programs::-webkit-scrollbar {
-    display: none;
-}
 
 .card {
-    display: inline-block;
+    flex: 0 0 80%; /* Set card width relative to the viewport */
+    max-width: 400px;
+    max-height: 400px;
     text-align: center;
-    padding: 30px;
-    border-radius: 30px;
+    padding: 15px;
+    border-radius: 20px;
     background-color: var(--base-100);
-    width: 400px;
-    height: 400px;
-    margin: 10px;
+    margin: 10px 5px;
     scroll-snap-align: start;
-
-
-    &.small {
-        width:250px;
-        height:200px;
-    }
 }
 
 .card-icon {
-    width: 80%;
+    width: 60%; /* Smaller icons for phones */
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     object-fit: contain;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .scrolling-projects {
+        gap: 5px; /* Reduce gap for smaller screens */
+    }
+
+    .card {
+        flex: 0 0 70%; /* Further reduce card size on small screens */
+        padding: 10px;
+    }
+
+    .card-icon {
+        width: 50%; /* Adjust icon size */
+    }
 }
 
 .large-banner {
@@ -304,7 +307,7 @@ section {
                     justify-content: center;
                     margin-left: 10px;
                 }
-                
+
                 a, p {
                     display: block;
                 }
